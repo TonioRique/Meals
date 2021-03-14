@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	>
+
+<head>
+	<title>Meal</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<a class="header-logo mr-auto col-md-4" href="#">
+					<img src="../img/brafe.png" alt="Brafé">
+				</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-container container-fluid">
+
+		<div class="row">
+
+			<section class="produtos col-md-8 col-xl-9 mb-5">
+				<header class="row align-items-center mt-3">
+				<h1 class="col">Meals</h1>											
+				
+					<form method="GET" action="/meal" th:object="${filtro}" id="floatingTextarea">
+						<div class="form-group row col-sm-4">
+							<div class="input-group mb-2">
+							 <input class="search form-control mr-3 ml-3" placeholder="Search meal" 
+							 autofocus="autofocus" th:field="*{strMeal}"></input>
+							 <span class = "input-group-btn>">
+							 	<button type="submit" class="btn btn-outline-dark">
+							 		<img src="../img/loupe.png" height="25px" width="25px"/>
+							 	</button>
+							 </span>
+							</div>
+						</div>
+					</form>			
+				</header>
+				<ul>
+					<li class="produtos-item" th:each="meal :${meals}">
+						<div class="media" data-bs-toggle="collapse" th:href="'#collapse'+${meal.idMeal}" role="button" aria-expanded="false" th:attr="aria-controls='collapse'+${meal.idMeal}">
+							<img th:src="${meal.strMealThumb}" width="140" alt="Café 1">
+							<ul class="media-body">
+							
+								<li><span>Name</span> <span th:text="${meal.strMeal}"></span></li>
+								<li><span>Category</span> <span th:text="${meal.strCategory}"> </span></li>
+								<li><span>Area</span> <span th:text="${meal.strArea}"></span></li>
+								<li class="collapse" th:id="'collapse'+${meal.idMeal}"><span>cooking instructions:</span> <span th:text="${meal.strInstructions}"></span>
+								</li>
+							</ul>
+						</div>
+					</li>
+					
+				</ul>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

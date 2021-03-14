@@ -1,0 +1,161 @@
+body,
+p,
+h1,
+ul,
+li {
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: #252525;
+  background: #e7e4d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Header*/
+
+.header {
+  background: #d6d3c8;
+  padding: 20px 0;
+}
+
+.header-menu li a {
+  color: #252525;
+  font-size: 1.125em;
+  padding: 0 10px;
+}
+
+.header-menu ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-menu li:first-child a {
+  padding-left: 0px;
+}
+
+@media (max-width: 739px) {
+  .header-menu ul {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .side-nav {
+    background: none;
+  }
+  .side-nav ul {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .side-nav li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .side-nav li a::before {
+    top: 0;
+    margin: 0;
+  }
+  .side-nav li a {
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+    padding: 10px;
+    border: none;
+    background: #252525;
+    border-radius: 4px;
+  }
+}
+
+/* Produtos */
+.produtos {
+  margin: 0 auto;
+}
+.produtos h1 {
+  font-size: 2.25em;
+  font-weight: bold;
+}
+
+.search {
+  color: #e7e4d8;
+  font-size: 1.125em;
+  font-family: Courier, monospace;
+  border-radius: 4px;
+  max-width: 450px;
+  max-height: 40px;
+}
+label {
+  color: #252525;
+  font-family: 'Courier New', Courier, monospace;
+}
+.produtos-item {
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+  margin-top: 20px;
+  position: relative;
+}
+
+.produtos-item a {
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  text-indent: -200px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  background: url('../img/edit.svg') no-repeat;
+}
+
+.produtos-item a:hover {
+  background: url('../img/edit-hover.svg') no-repeat;
+}
+
+.produtos-item ul {
+  padding: 0 20px;
+}
+
+.produtos-item li {
+  padding: 10px 0;
+  font-size: 1.125em;
+  font-family: Courier, monospace;
+  border-bottom: 1px solid #e7e4d8;
+}
+
+.produtos-item li:last-child {
+  border: none;
+}
+
+.produtos-item span {
+  font-weight: bold;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+/*Footer*/
+
+.footer {
+  background: #d6d3c8;
+  text-align: center;
+  padding: 60px 0;
+  font-size: 1.125em;
+  line-height: 1.4em;
+}
