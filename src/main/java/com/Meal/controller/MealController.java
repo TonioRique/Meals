@@ -16,7 +16,7 @@ import com.Meal.model.MealList;
 import com.Meal.service.filter.MealFilter;
 
 @Controller
-@RequestMapping("/meal")
+@RequestMapping("")
 public class MealController {
 	
 	@GetMapping

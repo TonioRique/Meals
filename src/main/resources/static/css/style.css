@@ -28,6 +28,7 @@ img {
 
 a {
   text-decoration: none;
+  color:#252525;
 }
 
 /*Header*/
@@ -37,10 +38,10 @@ a {
   padding: 20px 0;
 }
 
-.header-menu li a {
+.header-menu h1 {
   color: #252525;
-  font-size: 1.125em;
-  padding: 0 10px;
+  padding: 10px 10px;
+  font-family: Georgia, serif;
 }
 
 .header-menu ul {
@@ -51,6 +52,7 @@ a {
 .header-menu li:first-child a {
   padding-left: 0px;
 }
+
 
 @media (max-width: 739px) {
   .header-menu ul {
