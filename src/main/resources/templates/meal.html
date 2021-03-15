@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
 	<title>Meal</title>
@@ -18,7 +14,7 @@
 	<header class="header">
 		<div class="container-fluid">
 			<div class="row">
-				<a class="header-logo mr-auto ml-4 col-md-4" href="/">
+				<a class="header-logo mr-auto col-md-4" href="/">
 					<h1 class="logo">Meals Service</h1>
 				</a>
 			</div>
@@ -31,37 +27,43 @@
 
 			<section class="produtos col-md-8 col-xl-9 mb-5">
 				<header class="row align-items-center mt-3">
-				<h1 class="col">Meals</h1>											
-				
+					<h1 class="col">Meals</h1>
+
 					<form method="GET" action="" th:object="${filtro}" id="floatingTextarea">
 						<div class="form-group row col-sm-4">
 							<div class="input-group mb-2">
-							 <input class="search form-control mr-3 ml-3" placeholder="Search meal" 
-							 autofocus="autofocus" th:field="*{strMeal}"></input>
-							 <span class = "input-group-btn>">
-							 	<button type="submit" class="btn btn-outline-dark">
-							 		<img src="../img/loupe.png" height="25px" width="25px"/>
-							 	</button>
-							 </span>
+								<input class="search form-control mr-3 ml-3" placeholder="Search meal" autofocus="autofocus" th:field="*{strMeal}"></input>
+								<span class="input-group-btn>">
+									<button type="submit" class="btn btn-outline-dark">
+										<img src="../img/loupe.png" height="25px" width="25px" />
+									</button>
+								</span>
 							</div>
 						</div>
-					</form>			
+					</form>
 				</header>
 				<ul>
 					<li class="produtos-item" th:each="meal :${meals}">
 						<div class="media" data-bs-toggle="collapse" th:href="'#collapse'+${meal.idMeal}" role="button" aria-expanded="false" th:attr="aria-controls='collapse'+${meal.idMeal}">
 							<img th:src="${meal.strMealThumb}" width="140" alt="Café 1">
 							<ul class="media-body">
-							
-								<li><span>Name</span> <span th:text="${meal.strMeal}"></span></li>
-								<li><span>Category</span> <span th:text="${meal.strCategory}"> </span></li>
-								<li><span>Area</span> <span th:text="${meal.strArea}"></span></li>
-								<li class="collapse" th:id="'collapse'+${meal.idMeal}"><span>cooking instructions:</span> <span th:text="${meal.strInstructions}"></span>
+
+								<li>
+									<p class="label">Name</p> <span th:text="${meal.strMeal}"></span>
+								</li>
+								<li>
+									<p class="label">Category</p> <span th:text="${meal.strCategory}"> </span>
+								</li>
+								<li>
+									<p class="label">Area</p> <span th:text="${meal.strArea}"></span>
+								</li>
+								<li class="collapse" th:id="'collapse'+${meal.idMeal}">
+									<p class="label">cooking instructions:</p> <span th:text="${meal.strInstructions}"></span>
 								</li>
 							</ul>
 						</div>
 					</li>
-					
+
 				</ul>
 			</section>
 		</div>
